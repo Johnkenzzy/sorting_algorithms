@@ -29,6 +29,7 @@ size_t lumoto_partition(int *array, size_t low_part, size_t high_part)
 		}
 	}
 
+	print_array(array, high_part + 1);
 	temp = array[pivot_ndx];
 	array[pivot_ndx] = array[high_part];
 	array[high_part] = temp;
@@ -48,15 +49,20 @@ size_t lumoto_partition(int *array, size_t low_part, size_t high_part)
  */
 void quick_sort_recursive(int *array, size_t low_part, size_t high_part)
 {
-	size_t partition_ndx;
+	size_t partition_ndx, sub_ndx;
 
 	if (low_part < high_part)
+	{
 		partition_ndx = lumoto_partition(array, low_part, high_part);
 
-	if (partition_ndx > 0)
-		quick_sort_recursive(array, low_part, partition_ndx - 1);
+		if (partition_ndx > 0)
+		{
+			sub_ndx = partition_ndx - 1;
+			quick_sort_recursive(array, low_part, sub_ndx);
+		}
 
-	quick_sort_recursive(array, partition_ndx + 1, high_part);
+		quick_sort_recursive(array, partition_ndx + 1, high_part);
+	}
 }
 
 
