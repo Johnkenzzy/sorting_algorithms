@@ -63,7 +63,7 @@ void nodes_swapping(listint_t **list, listint_t *left, listint_t *right)
  * @curr_node: Pointer to the current node of the list
  * @sp: Updates if swap occurs
  *
- * Return: 1 if swap occur, else 0
+ * Return: The current node
  */
 listint_t *move_left_to_right(listint_t **list, listint_t *curr_node, int *sp)
 {
@@ -93,7 +93,7 @@ listint_t *move_left_to_right(listint_t **list, listint_t *curr_node, int *sp)
  * @curr_node: Pointer to the current node of the list
  * @sp: Updates if swap occurs
  *
- * Return: 1 if swap occur, else 0
+ * Return: The current node
  */
 listint_t *move_right_to_left(listint_t **list, listint_t *curr_node, int *sp)
 {
