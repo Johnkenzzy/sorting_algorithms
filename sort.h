@@ -42,5 +42,12 @@ void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 
 
+/* Helper Functions */
+size_t lumoto_array_pt(int *array, size_t low_pt, size_t high_pt, size_t size);
+void sort_partition(int *array, size_t low_pt, size_t high_pt, size_t s);
+void nodes_swapping(listint_t **list, listint_t *left, listint_t *right);
+listint_t *move_left_to_right(listint_t **list, listint_t *curr_node, int *sp);
+listint_t *move_right_to_left(listint_t **list, listint_t *curr_node, int *sp);
+
 
 #endif /* __SORT_H__ */

@@ -2,6 +2,24 @@
 
 
 /**
+ * quick_sort - sorts an array integers in ascending order
+ *
+ * @array: array to be sorted
+ * @size: size of the array
+ *
+ * Return: nothing
+ */
+void quick_sort(int *array, size_t size)
+{
+
+	if (!array || size < 2)
+		return;
+
+	sort_partition(array, 0, size - 1, size);
+}
+
+
+/**
  * lumoto_array_pt - divides an array into two partitions
  *
  * @array: array to be partitioned
@@ -73,22 +91,4 @@ void sort_partition(int *array, size_t low_pt, size_t high_pt, size_t s)
 
 		sort_partition(array, partition_ndx + 1, high_pt, size);
 	}
-}
-
-
-/**
- * quick_sort - sorts an array integers in ascending order
- *
- * @array: array to be sorted
- * @size: size of the array
- *
- * Return: nothing
- */
-void quick_sort(int *array, size_t size)
-{
-
-	if (!array || size < 2)
-		return;
-
-	sort_partition(array, 0, size - 1, size);
 }
